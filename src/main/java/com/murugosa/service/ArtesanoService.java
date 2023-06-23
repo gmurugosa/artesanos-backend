@@ -5,6 +5,7 @@ import com.murugosa.model.Artesano;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ArtesanoService {
@@ -17,5 +18,9 @@ public class ArtesanoService {
 
     public List<Artesano> obtenerArtesanos(){
         return artesanoRepository.findAll();
+    }
+
+    public Optional<Artesano> obtenerArtesano(String id){
+        return artesanoRepository.findById(id);
     }
 }
